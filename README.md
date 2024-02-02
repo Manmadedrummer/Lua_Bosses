@@ -8,7 +8,7 @@ A). King Theramis & Queen Elaine - Originally done by svedin [OwnedCore](https:/
 
 B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by Sabens [OwnedCore](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/157547-project-lord-of-fallen-heros.html)
 
-C.) Cyous Renn - The Exile - Originally done by HardBall[OwnedCore](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-general-releases/277834-lua-cyous-renn-exile.html)
+C.) Cyous Renn - The Exile - Originally done by HardBall [OwnedCore](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-general-releases/277834-lua-cyous-renn-exile.html)
 
 
 
