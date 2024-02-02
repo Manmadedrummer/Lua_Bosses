@@ -19,8 +19,9 @@ B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by 
 ************************************
     Name              ID
 
-A). King Theramis - 800800
-A). Queen Elaine - 800801
-
-B). Fallen Hero - 800803
-B). Rantonious - 800804
+A). King Theramis - 800800<br>
+A). Queen Elaine - 800801<br>
+<br>
+B). Fallen Hero - 800803<br>
+B). Rantonious - 800804<br>
+<br>
