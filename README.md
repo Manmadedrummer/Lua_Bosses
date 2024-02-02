@@ -4,6 +4,23 @@ A Collection of Lua Script bosses found from around the web converted to Azeroth
 
 .: BOSSES LIST :.
 
-King Theramis & Queen Elaine - Originally done by svedin (OwnedCore)
+A). King Theramis & Queen Elaine - Originally done by svedin (OwnedCore)
 
-Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by Sabens (OwnedCore) 
+B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by Sabens (OwnedCore) 
+
+
+
+
+
+
+
+************************************
+          NPC ID's
+************************************
+    Name              ID
+
+A). King Theramis - 800800
+A). Queen Elaine - 800801
+
+B). Fallen Hero - 800803
+B). Rantonious - 800804
