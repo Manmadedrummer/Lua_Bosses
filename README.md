@@ -21,6 +21,7 @@ B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by 
 |------------------|---------|
 | King Theramis    | 800800  |
 | Queen Elaine     | 800801  |
+|                  |         |
 | Fallen Hero      | 800803  |
 | Rantonious       | 800804  |
 
