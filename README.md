@@ -6,7 +6,7 @@ A Collection of Lua Script bosses found from around the web converted to Azeroth
 
 A). King Theramis & Queen Elaine - Originally done by svedin (OwnedCore)
 
-B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by Sabens (OwnedCore) 
+B). Rantonius & Fallen Hero Mob [Lord of The Fallen Heros] - Originally done by Sabens [OwnedCore](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/157547-project-lord-of-fallen-heros.html)
 
 
 
