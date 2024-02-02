@@ -6,7 +6,7 @@ function Rantonious_Combat(Unit, Event)
 end
 
 function Rantonious_Hero(Unit, Event)
-    local faction = 90
+    local faction = 128
     x = Unit:GetX();
     y = Unit:GetY();
     z = Unit:GetZ();
