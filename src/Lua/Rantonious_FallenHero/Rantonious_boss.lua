@@ -1,51 +1,48 @@
-function Rantonious_Combat(Unit, Event)
-    Unit:SendChatMessage(12, 0, "Begone, you mortal fools!")
-    Unit:RegisterEvent("Rantonious_Hero", 30000, 0)
-    Unit:RegisterEvent("Rantonious_Whirlwind", 20000, 0)
-    Unit:RegisterEvent("Malchezzar_Phase2", 1500, 0)
+function Rantonious_Combat(event, creature, target)
+    creature:SendUnitSay("Begone, you mortal fools!", 0)
+    creature:RegisterEvent(Rantonious_Hero, 30000, 0)
+    creature:RegisterEvent(Rantonious_Whirlwind, 20000, 0)
+    creature:RegisterEvent(Rantonious_Phase2, 1500, 0)
 end
 
-function Rantonious_Hero(Unit, Event)
+function Rantonious_Hero(event, creature)
     local faction = 14
-    x = Unit:GetX();
-    y = Unit:GetY();
-    z = Unit:GetZ();
-    o = Unit:GetO();
-    Unit:SpawnCreature(822001, x, y, z, o, faction, 60000)
+    local x, y, z, o = creature:GetX(), creature:GetY(), creature:GetZ(), creature:GetO()
+    creature:SpawnCreature(800803, x, y, z, o, faction, 60000)
 end
 
-function Rantonious_Whirlwind(Unit, Event)
-    Unit:CastSpell(26084)
-    Unit:RegisterEvent("Rantonious_ShadowNova", 3000, 1)
+function Rantonious_Whirlwind(event, creature)
+    creature:CastSpell(26084)
+    creature:RegisterEvent(Rantonious_ShadowNova, 3000, 1)
 end
 
-function Rantonious_ShadowNova(Unit, Event)
-    Unit:FullCastSpell(30852)
+function Rantonious_ShadowNova(event, creature)
+    creature:FullCastSpell(30852)
 end
 
-function Rantonious_Phase2(Unit, Event)
-    if Unit:GetHealthPct() < 25 then
-    Unit:RemoveEvents()
-    Unit:SendChatMessage(12, 0, "I promise your death will be quick and easy!")
-    Unit:RegisterEvent("Rantonious_Hero", 15000, 0)
-    Unit:RegisterEvent("Rantonious_ShadowNova", 17000, 0)
+function Rantonious_Phase2(event, creature)
+    if creature:GetHealthPct() < 25 then
+        creature:RemoveEvents()
+        creature:SendUnitSay("I promise your death will be quick and easy!", 0)
+        creature:RegisterEvent(Rantonious_Hero, 15000, 0)
+        creature:RegisterEvent(Rantonious_ShadowNova, 17000, 0)
     end
 end
 
-function Rantonious_Wipe(Unit, Event)
-    Unit:RemoveEvents()
+function Rantonious_Wipe(event, creature)
+    creature:RemoveEvents()
 end
 
-function Rantonious_Died(Unit, Event)
-    Unit:SendChatMessage(12, 0, "How..could..this..happen?")
-    Unit:RemoveEvents()
+function Rantonious_Died(event, creature)
+    creature:SendUnitSay("How..could..this..happen?", 0)
+    creature:RemoveEvents()
 end
 
-function Rantonious_KillPlayer(Unit, Event)
-    Unit:SendChatMessage(12, 0, "Your death only feeds my power!")
+function Rantonious_KillPlayer(event, creature)
+    creature:SendUnitSay("Your death only feeds my power!", 0)
 end
 
-RegisterUnitEvent(800804, 1, "Rantonious_Combat")
-RegisterUnitEvent(800804, 2, "Rantonious_Wipe")
-RegisterUnitEvent(800804, 3, "Rantonious_KillPlayer")
-RegisterUnitEvent(800804, 4, "Rantonious_Died")
+RegisterCreatureEvent(800804, 1, Rantonious_Combat)
+RegisterCreatureEvent(800804, 2, Rantonious_Wipe)
+RegisterCreatureEvent(800804, 3, Rantonious_KillPlayer)
+RegisterCreatureEvent(800804, 4, Rantonious_Died)
