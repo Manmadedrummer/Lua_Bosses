@@ -23,31 +23,31 @@ function King_Theramis_Aura(event, creature)
 end
 
 function King_Theramis_Leap(event, creature)
-    creature:CastSpell(59689, creature:GetRandomPlayer(7))
+    creature:CastSpell(67749, creature:GetRandomPlayer(7))
 end
 
 function King_Theramis_Enrage(event, creature)
-    creature:CastSpell(48193, creature:GetRandomPlayer(0))
+    creature:CastSpell(78722, creature:GetRandomPlayer(0))
 end
 
 function King_Theramis_Frenzy(event, creature)
-    creature:CastSpell(28747, creature:GetRandomPlayer(0))
+    creature:CastSpell(57086, creature:GetRandomPlayer(0))
 end
 
 function King_Theramis_Pound(event, creature)
-    creature:CastSpell(53472, creature:GetVictim())
+    creature:CastSpell(53474, creature:GetVictim())
 end
 
 function King_Theramis_SpellReflect(event, creature)
-    creature:CastSpell(47981, creature:GetVictim())
+    creature:CastSpell(69901, creature:GetVictim())
 end
 
 function King_Theramis_FlameCrash(event, creature)
-    creature:CastSpell(40832, creature:GetVictim())
+    creature:CastSpell(40841, creature:GetVictim())
 end
 
 function King_Theramis_Whirlwind(event, creature)
-    creature:CastSpell(41057, creature:GetRandomPlayer(7))
+    creature:CastSpell(63807, creature:GetRandomPlayer(7))
 end
 
 function King_Theramis_Blast(event, creature)
