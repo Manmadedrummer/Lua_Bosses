@@ -1,15 +1,16 @@
-function Hero_Combat(Unit, Event)
-    Unit:CastSpell(30843)
-    Unit:RegisterEvent("Hero_Cleave", 4000, 0)
+function Hero_Combat(event, creature, target)
+    creature:CastSpell(30843)
+    creature:RegisterEvent(Hero_Cleave, 4000, 0)
 end
 
-function Hero_Cleave(Unit, Event)
-    Unit:CastSpell(15284)
+function Hero_Cleave(event, creature)
+    creature:CastSpell(15284)
 end
 
-function Hero_Wipe(Unit, Event)
-    Unit:RemoveEvents()
+function Hero_Wipe(event, creature)
+    creature:RemoveEvents()
 end
 
-RegisterUnitEvent(800803, 1, "Hero_Combat")
-RegisterUnitEvent(800803, 2, "Hero_Wipe")
+RegisterCreatureEvent(800803, 1, Hero_Combat)
+RegisterCreatureEvent(800803, 2, Hero_Wipe)
+
