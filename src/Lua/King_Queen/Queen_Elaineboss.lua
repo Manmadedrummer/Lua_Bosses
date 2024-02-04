@@ -17,7 +17,7 @@ Unit:RegisterEvent("Queen_Elaine_flameburst", 80000, 11)
 end
 
 function Queen_Elaine_reflectiveshield(pUnit, Event) 
-pUnit:CastSpell(41475, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(66515, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_smite(pUnit, Event) 
@@ -25,27 +25,27 @@ pUnit:FullCastSpellOnTarget(41471, pUnit:GetRandomPlayer(0))
 end
 
 function Queen_Elaine_cohealing(pUnit, Event) 
-pUnit:CastSpell(41455, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(71133, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_blizzard(pUnit, Event) 
-pUnit:FullCastSpellOnTarget(41482, pUnit:GetClosestPlayer(0)) 
+pUnit:FullCastSpellOnTarget(77924, pUnit:GetClosestPlayer(0)) 
 end
 
 function Queen_Elaine_frostnova(pUnit, Event) 
-pUnit:CastSpell(44177, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(71929, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_soulfaly(pUnit, Event) 
-pUnit:FullCastSpellOnTarget(45442, pUnit:GetRandomPlayer(0)) 
+pUnit:FullCastSpellOnTarget(79264, pUnit:GetRandomPlayer(0)) 
 end
 
 function Queen_Elaine_frostblast(pUnit, Event) 
-pUnit:CastSpell(27808, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(72124, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_frostbolt(pUnit, Event) 
-pUnit:FullCastSpellOnTarget(28478, pUnit:GetRandomPlayer(0)) 
+pUnit:FullCastSpellOnTarget(72167, pUnit:GetRandomPlayer(0)) 
 end
 
 function Queen_Elaine_disruption(pUnit, Event) 
@@ -57,7 +57,7 @@ pUnit:CastSpell(41131, pUnit:GetRandomPlayer(7))
 end
 
 function Queen_Elaine_reflectiveshield(pUnit, Event) 
-pUnit:CastSpell(41475, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(66515, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_smite(pUnit, Event) 
@@ -65,11 +65,11 @@ pUnit:FullCastSpellOnTarget(41471, pUnit:GetRandomPlayer(0))
 end
 
 function Queen_Elaine_cohealing(pUnit, Event) 
-pUnit:CastSpell(41455, pUnit:GetClosestPlayer()) 
+pUnit:CastSpell(71133, pUnit:GetClosestPlayer()) 
 end
 
 function Queen_Elaine_blizzard(pUnit, Event) 
-pUnit:FullCastSpellOnTarget(41482, pUnit:GetRandomPlayer(0)) 
+pUnit:FullCastSpellOnTarget(77942, pUnit:GetRandomPlayer(0)) 
 end
 
 function Queen_Elaine_flameburst(pUnit, Event) 
