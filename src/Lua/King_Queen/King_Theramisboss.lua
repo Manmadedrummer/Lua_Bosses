@@ -1,137 +1,123 @@
-function King_Theramis_OnCombat(Unit, Event) 
-Unit:SendChatMessage(12, 0, "To arms! kill the intruders!")
-Unit:RegisterEvent("King_Theramis_phaseone",1000,0)
-Unit:RegisterEvent("King_Theramis_enrage", 90000, 3)
-Unit:RegisterEvent("King_Theramis_brust", 50000, 11)
-Unit:RegisterEvent("King_Theramis_screem", 60000, 7)
-Unit:RegisterEvent("King_Theramis_phasethree",1000,0)
-Unit:RegisterEvent("King_Theramis_enrage", 90000, 4)
-Unit:RegisterEvent("King_Theramis_phasetwo",1000,0)
-Unit:RegisterEvent("King_Theramis_frenzy", 90000, 4)
-Unit:RegisterEvent("King_Theramis_pound", 50000, 4)
-Unit:RegisterEvent("King_Theramis_spellreflect", 300000, 3)
-Unit:RegisterEvent("King_Theramis_flamecrash", 40000, 6)
-Unit:RegisterEvent("King_Theramis_aura", 70000, 4)
-Unit:RegisterEvent("King_Theramis_leap", 70000, 13)
-Unit:RegisterEvent("King_Theramis_whirlwind", 90000, 7)
-Unit:RegisterEvent("King_Theramis_blast", 90000, 8)
-Unit:RegisterEvent("King_Theramis_wrath", 140000, 5)
+function King_Theramis_OnCombat(event, creature, target)
+    creature:SendUnitSay("To arms! Kill the intruders!", 0)
+    creature:RegisterEvent(King_Theramis_PhaseOne, 1000, 0)
+    creature:RegisterEvent(King_Theramis_Enrage, 90000, 3)
+    creature:RegisterEvent(King_Theramis_Burst, 50000, 11)
+    creature:RegisterEvent(King_Theramis_Scream, 60000, 7)
+    creature:RegisterEvent(King_Theramis_PhaseThree, 1000, 0)
+    creature:RegisterEvent(King_Theramis_Enrage, 90000, 4)
+    creature:RegisterEvent(King_Theramis_PhaseTwo, 1000, 0)
+    creature:RegisterEvent(King_Theramis_Frenzy, 90000, 4)
+    creature:RegisterEvent(King_Theramis_Pound, 50000, 4)
+    creature:RegisterEvent(King_Theramis_SpellReflect, 300000, 3)
+    creature:RegisterEvent(King_Theramis_FlameCrash, 40000, 6)
+    creature:RegisterEvent(King_Theramis_Aura, 70000, 4)
+    creature:RegisterEvent(King_Theramis_Leap, 70000, 13)
+    creature:RegisterEvent(King_Theramis_Whirlwind, 90000, 7)
+    creature:RegisterEvent(King_Theramis_Blast, 90000, 8)
+    creature:RegisterEvent(King_Theramis_Wrath, 140000, 5)
 end
 
-function King_Theramis_aura(pUnit, Event) 
-pUnit:CastSpell(41541, pUnit:GetClosestPlayer()) 
+-- Define the aura function
+function King_Theramis_Aura(event, creature)
+    creature:CastSpell(41541, creature:GetVictim())
 end
 
-function King_Theramis_leap(pUnit, Event) 
-pUnit:CastSpell(59689, pUnit:GetRandomPlayer(7)) 
+-- Define the leap function
+function King_Theramis_Leap(event, creature)
+    creature:CastSpell(59689, creature:GetRandomPlayer(7))
 end
 
-function King_Theramis_enrage(pUnit, Event) 
-pUnit:CastSpell(48193, pUnit:GetRandomPlayer(0)) 
+function King_Theramis_Enrage(event, creature)
+    creature:CastSpell(48193, creature:GetRandomPlayer(0))
 end
 
-function King_Theramis_frenzy(pUnit, Event) 
-pUnit:CastSpell(28747, pUnit:GetRandomPlayer(0)) 
+function King_Theramis_Frenzy(event, creature)
+    creature:CastSpell(28747, creature:GetRandomPlayer(0))
 end
 
-function King_Theramis_pound(pUnit, Event) 
-pUnit:CastSpell(53472, pUnit:GetClosestPlayer()) 
+function King_Theramis_Pound(event, creature)
+    creature:CastSpell(53472, creature:GetVictim())
 end
 
-function King_Theramis_spellreflect(pUnit, Event) 
-pUnit:CastSpell(47981, pUnit:GetClosestPlayer()) 
+function King_Theramis_SpellReflect(event, creature)
+    creature:CastSpell(47981, creature:GetVictim())
 end
 
-function King_Theramis_flamecrash(pUnit, Event) 
-pUnit:CastSpell(40832, pUnit:GetClosestPlayer()) 
+function King_Theramis_FlameCrash(event, creature)
+    creature:CastSpell(40832, creature:GetVictim())
 end
 
-function King_Theramis_whirlwind(pUnit, Event) 
-pUnit:CastSpell(41057, pUnit:GetRandomPlayer(7)) 
+function King_Theramis_Whirlwind(event, creature)
+    creature:CastSpell(41057, creature:GetRandomPlayer(7))
 end
 
-function King_Theramis_blast(pUnit, Event) 
-pUnit:CastSpell(59700, pUnit:GetRandomPlayer(0)) 
+function King_Theramis_Blast(event, creature)
+    creature:CastSpell(59700, creature:GetRandomPlayer(0))
 end
 
-function King_Theramis_burst(pUnit, Event) 
-pUnit:CastSpell(48529, pUnit:GetRandomPlayer(7)) 
+function King_Theramis_Burst(event, creature)
+    creature:CastSpell(48529, creature:GetRandomPlayer(7))
 end
 
-function King_Theramis_screem(pUnit, Event) 
-pUnit:CastSpell(51750, pUnit:GetClosestPlayer()) 
+function King_Theramis_Scream(event, creature)
+    creature:CastSpell(51750, creature:GetVictim())
 end
 
-function King_Theramis_leap(pUnit, Event) 
-pUnit:CastSpell(59689, pUnit:GetRandomPlayer(7)) 
+function King_Theramis_Wrath(event, creature)
+    creature:CastSpell(57466, creature:GetRandomPlayer(7))
 end
 
-function King_Theramis_blast(pUnit, Event) 
-pUnit:CastSpell(59700, pUnit:GetRandomPlayer(0)) 
+function King_Theramis_PhaseOne(event, creature)
+    if creature:GetHealthPct() < 100 then
+        creature:RemoveEvents()
+        creature:FullCastSpell(0)
+        creature:RegisterEvent(King_Theramis_Scream, 60000, 7)
+        creature:RegisterEvent(King_Theramis_Burst, 50000, 11)
+        creature:RegisterEvent(King_Theramis_Enrage, 90000, 4)
+        creature:RegisterEvent(King_Theramis_PhaseTwo, 1000, 0)
+    end
 end
 
-function King_Theramis_spellreflect(pUnit, Event) 
-pUnit:CastSpell(47981, pUnit:GetClosestPlayer()) 
+function King_Theramis_PhaseTwo(event, creature)
+    if creature:GetHealthPct() < 70 then
+        creature:RemoveEvents()
+        creature:FullCastSpell(0)
+        creature:RegisterEvent(King_Theramis_SpellReflect, 300000, 3)
+        creature:RegisterEvent(King_Theramis_Frenzy, 90000, 6)
+        creature:RegisterEvent(King_Theramis_PhaseThree, 1000, 0)
+        creature:RegisterEvent(King_Theramis_Pound, 50000, 6)
+        creature:RegisterEvent(King_Theramis_SpellReflect, 300000, 3)
+        creature:RegisterEvent(King_Theramis_FlameCrash, 40000, 13)
+    end
 end
 
-function King_Theramis_flamecrash(pUnit, Event) 
-pUnit:CastSpell(40832, pUnit:GetClosestPlayer()) 
+function King_Theramis_PhaseThree(event, creature)
+    if creature:GetHealthPct() < 45 then
+        creature:RemoveEvents()
+        creature:FullCastSpell(0)
+        creature:RegisterEvent(King_Theramis_Aura, 70000, 4)
+        creature:RegisterEvent(King_Theramis_Leap, 70000, 13)
+        creature:RegisterEvent(King_Theramis_Whirlwind, 90000, 7)
+        creature:RegisterEvent(King_Theramis_Wrath, 140000, 5)
+    end
 end
 
-function King_Theramis_wrath(pUnit, Event) 
-pUnit:CastSpell(57466, pUnit:GetRandomPlayer(7)) 
+function King_Theramis_OnLeaveCombat(event, creature)
+    creature:RemoveEvents()
+    creature:SendUnitSay("Weak...", 0)
 end
 
-function King_Theramis_phaseone(pUnit, Event) 
-if pUnit:GetHealthPct() < 100 then 
-pUnit:RemoveEvents(); 
-pUnit:FullCastSpell(0)
-pUnit:RegisterEvent("King_Theramis_screem", 60000, 7)
-pUnit:RegisterEvent("King_Theramis_burst", 50000, 11)
-pUnit:RegisterEvent("King_Theramis_enrage", 90000, 4)
-pUnit:RegisterEvent("King_Theramis_phasetwo",1000,0)
-end 
+function King_Theramis_OnDied(event, creature)
+    creature:RemoveEvents()
+    creature:SendUnitSay("Aaah, my love! I will see you in the next life!", 0)
 end
 
-function King_Theramis_phasetwo(pUnit, Event) 
-if pUnit:GetHealthPct() < 70 then 
-pUnit:RemoveEvents(); 
-pUnit:FullCastSpell(0)
-pUnit:RegisterEvent("King_Theramis_spellreflect", 300000, 3)
-pUnit:RegisterEvent("King_Theramis_frenzy", 90000, 6)
-pUnit:RegisterEvent("King_Theramis_phasethree",1000,0)
-pUnit:RegisterEvent("King_Theramis_pound", 50000, 6)
-pUnit:RegisterEvent("King_Theramis_spellreflect", 300000, 3)
-pUnit:RegisterEvent("King_Theramis_flamecrash", 40000, 13)
-end 
+function King_Theramis_OnKilledTarget(event, creature)
+    creature:SendUnitSay("Don't worry; your friends will soon join you!", 0)
 end
 
-function King_Theramis_phasethree(pUnit, Event) 
-if pUnit:GetHealthPct() < 45 then 
-pUnit:RemoveEvents(); 
-pUnit:FullCastSpell(0)
-pUnit:RegisterEvent("King_Theramis_aura", 70000, 4)
-pUnit:RegisterEvent("King_Theramis_leap", 70000, 13)
-pUnit:RegisterEvent("King_Theramis_whirlwind", 90000, 7)
-pUnit:RegisterEvent("King_Theramis_wrath", 140000, 5)
-end 
-end
-
-function King_Theramis_OnLeaveCombat(Unit, Event) 
-Unit:RemoveEvents() 
-Unit:SendChatMessage(11, 0, "Weak...") 
-end
-
-function King_Theramis_OnDied(Unit, Event) 
-Unit:RemoveEvents() 
-Unit:SendChatMessage(12, 0, "Aaah, my love! i will see you in the next life!") 
-end
-
-function King_Theramis_OnKilledTarget(Unit, Event) 
-Unit:SendChatMessage(12, 0, "Don't be worry your friends will soon join you!") 
-end
-
-RegisterUnitEvent(800800, 1, "King_Theramis_OnCombat")
-RegisterUnitEvent(800800, 2, "King_Theramis_OnLeaveCombat")
-RegisterUnitEvent(800800, 3, "King_Theramis_OnKilledTarget")
-RegisterUnitEvent(800800, 4, "King_Theramis_OnDied")
+RegisterCreatureEvent(800800, 1, King_Theramis_OnCombat)
+RegisterCreatureEvent(800800, 2, King_Theramis_OnLeaveCombat)
+RegisterCreatureEvent(800800, 3, King_Theramis_OnKilledTarget)
+RegisterCreatureEvent(800800, 4, King_Theramis_OnDied)
