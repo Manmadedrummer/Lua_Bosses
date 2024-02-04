@@ -18,12 +18,10 @@ function King_Theramis_OnCombat(event, creature, target)
     creature:RegisterEvent(King_Theramis_Wrath, 140000, 5)
 end
 
--- Define the aura function
 function King_Theramis_Aura(event, creature)
     creature:CastSpell(41541, creature:GetVictim())
 end
 
--- Define the leap function
 function King_Theramis_Leap(event, creature)
     creature:CastSpell(59689, creature:GetRandomPlayer(7))
 end
@@ -80,6 +78,7 @@ function King_Theramis_PhaseOne(event, creature)
 end
 
 function King_Theramis_PhaseTwo(event, creature)
+    creature:SendUnitSay("Your kinda tough aren't you!", 0)
     if creature:GetHealthPct() < 70 then
         creature:RemoveEvents()
         creature:FullCastSpell(0)
@@ -93,6 +92,7 @@ function King_Theramis_PhaseTwo(event, creature)
 end
 
 function King_Theramis_PhaseThree(event, creature)
+        creature:SendUnitSay("Say your prayers!", 0)
     if creature:GetHealthPct() < 45 then
         creature:RemoveEvents()
         creature:FullCastSpell(0)
